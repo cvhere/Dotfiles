@@ -1,0 +1,5 @@
+ignore-empty-password
+daemonize
+indicator-caps-lock
+font=JetBrains Mono
+image=$HOME/Git/Dotfiles/Pictures/floating-boat.jpg

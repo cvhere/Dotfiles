@@ -1,0 +1,26 @@
+# vim:fileencoding=utf-8:foldmethod=marker
+
+
+font_family JetBrains Mono
+
+disable_ligatures never
+
+scrollback_lines 5000
+
+# Mouse
+# copy_on_select clipboard
+strip_trailing_spaces smart
+
+
+# Keyboard Shortcuts
+
+map alt+c copy_to_clipboard
+map control+c copy_or_interrupt
+map alt+v paste_from_clipboard
+map control+v paste_from_clipboard
+
+
+# BEGIN_KITTY_THEME
+# Catppuccin-Macchiato
+include current-theme.conf
+# END_KITTY_THEME

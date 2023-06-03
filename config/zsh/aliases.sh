@@ -1,0 +1,7 @@
+alias pacs="sudo pacman -S"
+alias pac="pacman -S"
+alias pacq="pacman -Q"
+alias pacr="pacman -Rns"
+alias yc="yay -Yc"
+alias rsno="repo sync -c --no-clone-bundle -j8   --no-tags"
+alias s=" sudo"
