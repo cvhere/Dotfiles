@@ -6,6 +6,7 @@ setopt hist_verify
 setopt share_history   
 
 export XDG_CONFIG_HOME=$HOME/.config
+export JAVA_HOME=/usr/lib/jvm/default
 
 # Catppuccin theme for Fzf
 export FZF_DEFAULT_OPTS=" \

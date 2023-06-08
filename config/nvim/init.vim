@@ -1,3 +1,5 @@
+lua require('plugins');
+lua require('bufferline').setup{};
 set nu " number
 set rnu " relative number
 set showmatch
@@ -15,7 +17,6 @@ syntax on
 set mouse=a
 set clipboard=unnamedplus
 filetype plugin on
-set cursorline
+" set cursorline
 set ttyfast
 set noswapfile
-
