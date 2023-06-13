@@ -1,0 +1,7 @@
+# vim ftype=sh:ts=2:sw=2:et
+# Patches shell scripts
+
+grep -i "^Color$" /etc/pacman.conf 1> /dev/null || echo "Enabling color in pacman output" && sudo sed -i 's/^#Color$/Color/g' /etc/pacman.conf
+grep -i "Experimental = true" /etc/bluetooth/main.conf 1> /dev/null || echo "Enabling experimental features in bluetooth"  \
+ && sudo sed -i -E 's/^(#)*(Kernel)?Experimental =.*/\2Experimental = true/g' /etc/bluetooth/main.conf
+

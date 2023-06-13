@@ -1,0 +1,19 @@
+{
+    "output": {
+        "metadata": {
+            "url_for_irs": "https://autoeq.app/"
+        },
+        "blocklist": [],
+        "convolver#0": {
+            "autogain": true,
+            "bypass": false,
+            "input-gain": 0.0,
+            "ir-width": 100,
+            "kernel-path": "/home/cv/.config/easyeffects/irs/PXC550_Wireless_ANC_44100Hz.irs",
+            "output-gain": 0.0
+        },
+        "plugins_order": [
+            "convolver#0"
+        ]
+    }
+}

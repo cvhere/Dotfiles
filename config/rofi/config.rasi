@@ -140,6 +140,15 @@ configuration {
 /*	me-select-entry: "MousePrimary";*/
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
+  
+  modes: "window,drun,run,filebrowser";
+  font: "Jet Brains Mono 12";
+  show-icons: true;
+  sorting-method: "fzf";
+  display-drun: "Applications";
+  display-run: "Command";
+  display-filebrowser: "Files";
+  display-window: "Window";
   timeout {
       action: "kb-cancel";
       delay:  0;
@@ -147,8 +156,9 @@ configuration {
   filebrowser {
       directories-first: true;
       sorting-method:    "name";
-}
+  }
+  eh : 1; //entry height
 }
 
 @theme "themes2/material"
-
+@import "catppuccin.rasi"

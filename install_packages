@@ -54,4 +54,4 @@ yi ttf-font-awesome
 yi zip unzip
 
 # Hyprland
-yi waybar-hyprland mako swayidle swaybg swaylock
+yi waybar-hyprland mako swayidle swaybg swaylock easyeffects pipewire-pulse
