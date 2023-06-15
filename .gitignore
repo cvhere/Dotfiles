@@ -7,3 +7,4 @@ config/lvim/
 config/Google
 config/Android*
 config/QtProject*
+config/ardour7

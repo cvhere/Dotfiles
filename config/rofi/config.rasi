@@ -142,13 +142,15 @@ configuration {
 /*	me-accept-custom: "Control+MouseDPrimary";*/
   
   modes: "window,drun,run,filebrowser";
-  font: "Jet Brains Mono 12";
+  font: "Jet Brains Mono 11";
   show-icons: true;
   sorting-method: "fzf";
-  display-drun: "Applications";
-  display-run: "Command";
-  display-filebrowser: "Files";
+  display-drun: " Apps";
+  display-run: " Command";
+  display-filebrowser: " Files";
   display-window: "Window";
+  hide-scrollbar:true;
+  sidebar-mode:true;
   timeout {
       action: "kb-cancel";
       delay:  0;
@@ -160,5 +162,4 @@ configuration {
   eh : 1; //entry height
 }
 
-@theme "themes2/material"
-@import "catppuccin.rasi"
+@theme "catppuccin-mocha"

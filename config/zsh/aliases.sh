@@ -8,3 +8,11 @@ alias s="sudo "
 alias sudo="sudo "
 alias bctl="bluetoothctl"
 alias sctl="systemctl"
+
+# Enable coloured output to pipelines when appended
+alias cl="--color=always"
+# alias c=" " # Prefixed to command replace "cl" in the command
+
+# Enables less to display colour formatted input
+alias less="less -R"
+
