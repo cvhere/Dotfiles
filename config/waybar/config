@@ -1,10 +1,10 @@
 {
      "layer": "top", // Waybar at top layer
-    "height": 30, // Waybar height (to be removed for auto height)
+    "height": 34, // Waybar height (to be removed for auto height)
     "spacing": 2, // Gaps between modules (4px)
     "modules-left": ["wlr/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["idle_inhibitor", "mpris", "pulseaudio",  "cpu", "memory", "temperature","bluetooth", "network", "battery", "clock", "tray"],
+    "modules-right": ["idle_inhibitor", "pulseaudio#sink", "pulseaudio#source", "cpu", "memory", "temperature","bluetooth", "network", "battery", "clock", "tray"],
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -60,13 +60,7 @@
     },
     "temperature": {
         "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
-        "critical-threshold": 40,
-        "states": {
-            "normal": 20,
-            "high":40,
-            "critical":50
-        },
-        "format-high": "{icon}",
+        "critical-threshold": 45,
         "format-critical": "{icon}",
         "format": "",
         "tooltip-format": "{temperatureC}󰔄" ,
@@ -84,6 +78,8 @@
             "critical": 10
         },
         "interval": 60, // TODO
+        "tooltip-format-plugged": "Plugged {capacity}%",
+        "tooltip-format" : "{timeTo} {capacity}%",
         "format": "{icon}",
         "format-plugged": "󰂄",
         "format-alt": "{time} {capacity}%",
@@ -99,13 +95,10 @@
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨" ]
     },
-    "pulseaudio": {
-        "format": "{icon}{format_source}",
-        "format-bluetooth": "{icon}{format_source}",
-        "format-bluetooth-muted": "󰟎{format_source}",
-        "format-muted": "{format_source}",
-        "format-source": "",
-        "format-source-muted": "",
+    "pulseaudio#sink": {
+        "format": "{icon}",
+        "format-bluetooth": "{icon}",
+        "format-bluetooth-muted": "󰟎",
         "tooltip-format": "{desc} {volume}%",
         "format-icons": {
             "headphone": "󰋋",
@@ -117,6 +110,15 @@
             "default": ["", "", ""]
         },
         "ignored-sinks": ["Easy Effects Sink", "easyeffects_sink"]
+    },
+    "pulseaudio#source": {
+        "format": "{format_source}",
+        "format-source" : "",
+        "format-source-bluetooth-muted" : "",
+        "format-source-muted": "",
+        "tooltip-format": "",
+        "tooltip-format-source": "{desc} {volume}%",
+        "ignored-sinks": ["Easy Effects Source", "Easy Effects Sink"]
     },
     "wlr/taskbar": {
     "format": "{icon}",

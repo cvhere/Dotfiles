@@ -1,0 +1,69 @@
+@import "macchiato.css";
+
+@define-color critical @red;
+@define-color warning @pink;
+@define-color deactivated alpha(@subtext0, 0.3);
+
+* {
+    font-size:12px;
+    font-family: JetBrains Mono;
+}
+
+window#waybar{
+    background-color: alpha(@base, 0.8);
+    border: 2px solid alpha(@crust, 0.3);
+}
+
+/* Modules background color */
+.modules-left, .modules-right {
+    background-color: shade(@base,0.7);
+}
+.modules-right {
+    border-radius : 10px 0px 0px 10px;
+}
+.modules-left {
+    border-radius : 0px 10px 10px 0px;
+}
+
+#mpris,
+#bluetooth,
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#tray,
+#idle_inhibitor {
+    padding: 0 9px;
+    color: @lavender;
+}
+
+#temperature.high, #temperature.critical {
+    color: @green;
+}
+
+#pulseaudio.sink.muted {
+    color: alpha(@subtext0, 0.3);
+}
+
+#memory.high, #cpu.high {
+    color: @green;
+}
+
+#battery.warning {
+   color: @warning 
+}
+#battery.critical, #cpu.critical, #memory.critical, #network.disconnected{
+    color: @critical;
+}
+
+#idle_inhibitor.activated, #battery.plugged {
+    color: @sky;   
+}
+
+#idle_inhibitor.deactivated {
+    color: @deactivated
+}
