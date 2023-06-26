@@ -8,6 +8,7 @@ alias s="sudo "
 alias sudo="sudo "
 alias bctl="bluetoothctl"
 alias sctl="systemctl"
+alias apkd="aria2c -d ~/Documents/Apps"
 
 # Enable coloured output to pipelines when appended
 alias cl="--color=always"

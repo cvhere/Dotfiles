@@ -11,7 +11,6 @@
 
 window#waybar{
     background-color: alpha(@base, 0.8);
-    border: 2px solid alpha(@crust, 0.3);
 }
 
 /* Modules background color */
@@ -23,6 +22,18 @@ window#waybar{
 }
 .modules-left {
     border-radius : 0px 10px 10px 0px;
+}
+
+.modules-right:nth-child(3n) {
+    color:@green;
+}
+
+.modules-right:nth-child(3n+1){
+    color: green;
+}
+
+.modules-right:nth-child(3n+2){
+    color:green;
 }
 
 #mpris,
@@ -38,7 +49,7 @@ window#waybar{
 #tray,
 #idle_inhibitor {
     padding: 0 9px;
-    color: @lavender;
+    /* color: @lavender; */
 }
 
 #temperature.high, #temperature.critical {

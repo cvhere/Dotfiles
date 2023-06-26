@@ -79,9 +79,11 @@
         },
         "interval": 60, // TODO
         "tooltip-format-plugged": "Plugged {capacity}%",
+        "tooltip-format-charging": "Charging {capacity}%",
         "tooltip-format" : "{timeTo} {capacity}%",
         "format": "{icon}",
         "format-plugged": "󰂄",
+        "format-charging": "󰂄",
         "format-alt": "{time} {capacity}%",
         "format-full": "󱈑",
         "format-icons": ["󰁺","󰁻","󰁼", "󰁽","󰁾", "󰁿","󰂀","󰂁","󰂂"]
@@ -121,18 +123,15 @@
         "ignored-sinks": ["Easy Effects Source", "Easy Effects Sink"]
     },
     "wlr/taskbar": {
-    "format": "{icon}",
-    "icon-size": 14,
-    "icon-theme": "Numix-Circle",
-    "tooltip-format": "{title}",
-    "on-click": "activate",
-    "on-click-middle": "close",
-    "ignore-list": [
-       "Alacritty"
-    ],
-        "app_ids-mapping": {
-            "firefoxdeveloperedition": "firefox-developer-edition"
-         }
+        "format": "{icon}",
+        "icon-size": 14,
+        "icon-theme": "Numix-Circle",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [
+            "Alacritty"
+        ],
     },
     "hyprland/window": {
     	"format": " {}",
@@ -157,6 +156,5 @@
 	    "status-icons": {
 		    "paused": "",
 	    },
-	    // "ignored-players": ["firefox"]
     }
 }
