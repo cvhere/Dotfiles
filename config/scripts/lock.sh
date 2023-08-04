@@ -1,4 +1,5 @@
 hyprctl dispatch dpms off
-killall -q waybar mako
+killall -q waybar
+killall -q mako
 
 

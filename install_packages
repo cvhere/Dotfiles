@@ -40,9 +40,7 @@ yi kitty neovim fzf fd hyprland xdg-desktop-portal-hyprland
 # Librewolf has dependency conflicts. Need to be chosen
 pacman -Q librewolf || yay --nocleanmenu --nodiffmenu --removemake --needed -S librewolf-bin
 
-yi rofi obsidian polkit-gnome mako
-# yi waybar-hyprland
-yi openssh
+yi rofi obsidian polkit-gnome mako openssh
 
 # Hardware accelartion setup
 yi intel-media-driver libva-utils
@@ -54,4 +52,4 @@ yi ttf-font-awesome
 yi zip unzip
 
 # Hyprland
-yi waybar-hyprland mako swayidle swaybg swaylock easyeffects pipewire-pulse
+yi waybar mako swayidle swaybg swaylock easyeffects pipewire-pulse
