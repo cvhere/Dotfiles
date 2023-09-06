@@ -14,7 +14,7 @@ window#waybar{
 }
 
 /* Modules background color */
-.modules-left, .modules-right {
+.modules-left, .modules-center, .modules-right {
     background-color: shade(@base,0.7);
 }
 .modules-right {
@@ -29,11 +29,11 @@ window#waybar{
 }
 
 .modules-right:nth-child(3n+1){
-    color: green;
+    color: @green;
 }
 
 .modules-right:nth-child(3n+2){
-    color:green;
+    color:@red;
 }
 
 #mpris,
@@ -71,7 +71,7 @@ window#waybar{
     color: @critical;
 }
 
-#idle_inhibitor.activated, #battery.plugged {
+#idle_inhibitor.activated,#workspaces button.active, #battery.plugged {
     color: @sky;   
 }
 
