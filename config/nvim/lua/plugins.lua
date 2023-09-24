@@ -58,5 +58,8 @@ return require('packer').startup(function(use)
   use {'tjdevries/colorbuddy.vim', {'nvim-treesitter/nvim-treesitter', opt = true}}
 
   -- You can alias plugin names
-  use {'dracula/vim', as = 'dracula'}
+  use { "catppuccin/nvim", as = "catppuccin" }
+
+  -- Use coc for java completions.
+  -- use {'neoclide/coc.nvim', as ="coc", branch = 'release'}
 end)

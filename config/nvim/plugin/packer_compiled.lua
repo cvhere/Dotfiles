@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/cv/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/cv/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/cv/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/cv/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/cv/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/home/cv/.cache/nvim/packer_hererocks/2.1.1694285958/share/lua/5.1/?.lua;/home/cv/.cache/nvim/packer_hererocks/2.1.1694285958/share/lua/5.1/?/init.lua;/home/cv/.cache/nvim/packer_hererocks/2.1.1694285958/lib/luarocks/rocks-5.1/?.lua;/home/cv/.cache/nvim/packer_hererocks/2.1.1694285958/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/cv/.cache/nvim/packer_hererocks/2.1.1694285958/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -88,22 +88,27 @@ _G.packer_plugins = {
     path = "/home/cv/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
+  catppuccin = {
+    loaded = true,
+    path = "/home/cv/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
+  },
+  coc = {
+    loaded = true,
+    path = "/home/cv/.local/share/nvim/site/pack/packer/start/coc",
+    url = "https://github.com/neoclide/coc.nvim"
+  },
   ["colorbuddy.vim"] = {
     loaded = true,
     path = "/home/cv/.local/share/nvim/site/pack/packer/start/colorbuddy.vim",
     url = "https://github.com/tjdevries/colorbuddy.vim"
   },
   ["completion-nvim"] = {
-    after = { "vim-vsnip-integ", "vim-vsnip" },
+    after = { "vim-vsnip", "vim-vsnip-integ" },
     loaded = false,
     needs_bufread = false,
     path = "/home/cv/.local/share/nvim/site/pack/packer/opt/completion-nvim",
     url = "https://github.com/haorenW1025/completion-nvim"
-  },
-  dracula = {
-    loaded = true,
-    path = "/home/cv/.local/share/nvim/site/pack/packer/start/dracula",
-    url = "https://github.com/dracula/vim"
   },
   firenvim = {
     loaded = true,
@@ -194,33 +199,19 @@ time([[Config for gitsigns.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
+pcall(vim.api.nvim_create_user_command, 'Dispatch', function(cmdargs)
+          require('packer.load')({'vim-dispatch'}, { cmd = 'Dispatch', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-dispatch'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('Dispatch ', 'cmdline')
+      end})
 pcall(vim.api.nvim_create_user_command, 'Make', function(cmdargs)
           require('packer.load')({'vim-dispatch'}, { cmd = 'Make', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
         {nargs = '*', range = true, bang = true, complete = function()
           require('packer.load')({'vim-dispatch'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('Make ', 'cmdline')
-      end})
-pcall(vim.api.nvim_create_user_command, 'ALEEnable', function(cmdargs)
-          require('packer.load')({'ale'}, { cmd = 'ALEEnable', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'ale'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('ALEEnable ', 'cmdline')
-      end})
-pcall(vim.api.nvim_create_user_command, 'Start', function(cmdargs)
-          require('packer.load')({'vim-dispatch'}, { cmd = 'Start', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'vim-dispatch'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('Start ', 'cmdline')
-      end})
-pcall(vim.api.nvim_create_user_command, 'MarkdownPreview', function(cmdargs)
-          require('packer.load')({'markdown-preview.nvim'}, { cmd = 'MarkdownPreview', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'markdown-preview.nvim'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('MarkdownPreview ', 'cmdline')
       end})
 pcall(vim.api.nvim_create_user_command, 'Focus', function(cmdargs)
           require('packer.load')({'vim-dispatch'}, { cmd = 'Focus', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
@@ -229,12 +220,26 @@ pcall(vim.api.nvim_create_user_command, 'Focus', function(cmdargs)
           require('packer.load')({'vim-dispatch'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('Focus ', 'cmdline')
       end})
-pcall(vim.api.nvim_create_user_command, 'Dispatch', function(cmdargs)
-          require('packer.load')({'vim-dispatch'}, { cmd = 'Dispatch', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+pcall(vim.api.nvim_create_user_command, 'Start', function(cmdargs)
+          require('packer.load')({'vim-dispatch'}, { cmd = 'Start', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
         {nargs = '*', range = true, bang = true, complete = function()
           require('packer.load')({'vim-dispatch'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('Dispatch ', 'cmdline')
+          return vim.fn.getcompletion('Start ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'ALEEnable', function(cmdargs)
+          require('packer.load')({'ale'}, { cmd = 'ALEEnable', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'ale'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('ALEEnable ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'MarkdownPreview', function(cmdargs)
+          require('packer.load')({'markdown-preview.nvim'}, { cmd = 'MarkdownPreview', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'markdown-preview.nvim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('MarkdownPreview ', 'cmdline')
       end})
 time([[Defining lazy-load commands]], false)
 
@@ -242,8 +247,6 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType tex ++once lua require("packer.load")({'ale'}, { ft = "tex" }, _G.packer_plugins)]]
-vim.cmd [[au FileType vim ++once lua require("packer.load")({'ale'}, { ft = "vim" }, _G.packer_plugins)]]
 vim.cmd [[au FileType c ++once lua require("packer.load")({'ale'}, { ft = "c" }, _G.packer_plugins)]]
 vim.cmd [[au FileType sh ++once lua require("packer.load")({'ale'}, { ft = "sh" }, _G.packer_plugins)]]
 vim.cmd [[au FileType zsh ++once lua require("packer.load")({'ale'}, { ft = "zsh" }, _G.packer_plugins)]]
@@ -253,6 +256,8 @@ vim.cmd [[au FileType cmake ++once lua require("packer.load")({'ale'}, { ft = "c
 vim.cmd [[au FileType html ++once lua require("packer.load")({'ale'}, { ft = "html" }, _G.packer_plugins)]]
 vim.cmd [[au FileType markdown ++once lua require("packer.load")({'ale'}, { ft = "markdown" }, _G.packer_plugins)]]
 vim.cmd [[au FileType racket ++once lua require("packer.load")({'ale'}, { ft = "racket" }, _G.packer_plugins)]]
+vim.cmd [[au FileType tex ++once lua require("packer.load")({'ale'}, { ft = "tex" }, _G.packer_plugins)]]
+vim.cmd [[au FileType vim ++once lua require("packer.load")({'ale'}, { ft = "vim" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)

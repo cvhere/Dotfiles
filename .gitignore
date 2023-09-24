@@ -8,3 +8,9 @@ config/Google
 config/Android*
 config/QtProject*
 config/ardour7
+config/JetBrains/
+config/user-dirs.dirs
+config/user-dirs.locale
+config/tool_state
+config/nvim/plugin*
+config/coc/extensions

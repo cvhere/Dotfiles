@@ -1,4 +1,4 @@
-timeout 60 'hyprctl notify -1 3000 "rgb(ff1ea3)" "Laptop is inactive for 60 seconds"'  
-timeout 65 'swaylock; sh $HOME/.config/scripts/lock.sh' resume 'sh $HOME/.config/scripts/unlock.sh'
-timeout 120 'systemctl suspend'
+timeout 300 'hyprctl notify -1 3000 "rgb(ff1ea3)" "Laptop is inactive for 5 minutes"'  
+timeout 330 'swaylock; sh $HOME/.config/scripts/lock.sh' resume 'sh $HOME/.config/scripts/unlock.sh'
+timeout 360 'systemctl suspend'
 before-sleep 'swaylock'
