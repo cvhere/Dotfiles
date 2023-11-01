@@ -40,8 +40,10 @@ return require('packer').startup(function(use)
   use_rocks {'lua-resty-http', 'lpeg'}
 
   -- Plugins can have post-install/update hooks
-  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
-
+use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+})
   -- Post-install/update hook with neovim command
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
@@ -61,5 +63,12 @@ return require('packer').startup(function(use)
   use { "catppuccin/nvim", as = "catppuccin" }
 
   -- Use coc for java completions.
-  -- use {'neoclide/coc.nvim', as ="coc", branch = 'release'}
+  use {'neoclide/coc.nvim', as ="coc", branch = 'release'}
+
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+        'nvim-tree/nvim-web-devicons'
+    }
+  }
 end)

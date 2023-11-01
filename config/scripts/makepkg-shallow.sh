@@ -1,0 +1,11 @@
+#!/bin/bash
+
+git() {
+  if [[ $# -gt 1 && $1 == 'clone' ]]; then
+    /bin/git "$@" --depth=1
+  else
+    /bin/git "$@"
+  fi
+}
+
+source /bin/makepkg "$@"

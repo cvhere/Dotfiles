@@ -7,6 +7,7 @@ setopt share_history
 
 export XDG_CONFIG_HOME=$HOME/.config
 export JAVA_HOME=/usr/lib/jvm/default
+export PATH=/wp/YAAP/.repo/repo:$PATH
 
 # Catppuccin theme for Fzf
 export FZF_DEFAULT_OPTS=" \
@@ -19,8 +20,6 @@ source $HOME/.config/zsh/aliases.sh
 
 export LESS='-R --use-color -Dd+r$Du+b$'
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-export USE_CCACHE=1
-export CCACHE_EXEC=/usr/bin/ccache
 export CPU_SSE42=false
 export PARALLEL_JOBS=8
 

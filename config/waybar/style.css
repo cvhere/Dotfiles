@@ -14,7 +14,7 @@ window#waybar{
 }
 
 /* Modules background color */
-.modules-left, .modules-center, .modules-right {
+.modules-left, .modules-right {
     background-color: shade(@base,0.7);
 }
 .modules-right {
@@ -29,7 +29,7 @@ window#waybar{
 }
 
 .modules-right:nth-child(3n+1){
-    color: @green;
+    color: @red;
 }
 
 .modules-right:nth-child(3n+2){
@@ -49,7 +49,6 @@ window#waybar{
 #tray,
 #idle_inhibitor {
     padding: 0 9px;
-    /* color: @lavender; */
 }
 
 #temperature.high, #temperature.critical {
@@ -67,6 +66,7 @@ window#waybar{
 #battery.warning {
    color: @warning 
 }
+
 #battery.critical, #cpu.critical, #memory.critical, #network.disconnected{
     color: @critical;
 }

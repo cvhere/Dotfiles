@@ -2,7 +2,7 @@
 	"buildDir": "/home/cv/.cache/yay",
 	"editor": "",
 	"editorflags": "",
-	"makepkgbin": "makepkg",
+	"makepkgbin": "/home/cv/.config/scripts/makepkg-shallow.sh",
 	"makepkgconf": "",
 	"pacmanbin": "pacman",
 	"pacmanconf": "/etc/pacman.conf",

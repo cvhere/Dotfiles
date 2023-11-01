@@ -1,5 +1,8 @@
 {
   "coc-java|global": {
     "java.neverShowImportFinishNotification": true
+  },
+  "coc-java|/wp/YAAP": {
+    "java.activeBuildTool": "gradle"
   }
 }
