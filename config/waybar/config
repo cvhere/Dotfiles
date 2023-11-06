@@ -82,8 +82,8 @@
         "tooltip-format-charging": "Charging {capacity}%",
         "tooltip-format" : "{timeTo} {capacity}%",
         "format": "{icon}",
-        "format-plugged": "󰂄",
-        "format-charging": "󰂄",
+        "format-plugged": "",
+        "format-charging": "",
         "format-alt": "{time} {capacity}%",
         "format-full": "󱈑",
         "format-icons": ["󰁺","󰁻","󰁼", "󰁽","󰁾", "󰁿","󰂀","󰂁","󰂂"]

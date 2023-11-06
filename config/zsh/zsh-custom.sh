@@ -35,3 +35,12 @@ do
 done
 }
 
+
+use_ccache(){
+# Use CCACHE
+    export USE_CCACHE=1
+    export CCACHE_EXEC=/usr/bin/ccache
+    export CCACHE_DIR=/wp/ccache
+    ccache -M 50G -F 0
+    export USE_THINLTO_CACHE=true
+}
