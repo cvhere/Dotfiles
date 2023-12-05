@@ -20,8 +20,6 @@ source $HOME/.config/zsh/aliases.sh
 
 export LESS='-R --use-color -Dd+r$Du+b$'
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-export CPU_SSE42=false
-export PARALLEL_JOBS=8
 
 file_updates(){
 while [ 1 ];
